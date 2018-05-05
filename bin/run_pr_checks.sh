@@ -53,8 +53,11 @@ else
 
             #cp /app/package/nosetests.xml  /app
             #chown 498 /app/nosetests.xml
-            #cp /app/package/coverage.xml /app/
-            #chown 498 /app/coverage.xml
+            find . | grep coverage.xml
+            cp ./package/tests/coverage.xml /app/
+            chown 498 /app/coverage.xml
+            cp /app/coverage.xml /app/package
+            chown 498 /app/package/coverage.xml
         ;;
 
         'upload')
